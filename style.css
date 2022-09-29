@@ -18,17 +18,51 @@ body {
 
 .container {
     max-width: 375px;
-    background-color:hsl(216, 50%, 16%);
-    border-radius: .8rem;
-    padding: 1.7rem;
+    margin: 0 auto;
+}
+
+.wrap {
+    margin: 2rem 1rem;
+    padding: 1.1rem;
+    background-color: hsl(216, 50%, 16%);
+    border-radius: 1rem;
     box-shadow: 
                 0 2.1rem .9rem 2rem hsl(217, 54%, 11%),
                 0 3rem 3rem 2rem hsl(216, 50%, 16%);
 }
 
-picture img {
-    max-width: 100%;
-    border-radius: .5rem;
+.img {
+    border-radius: .7rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.img img{
+    width: 100%;
+    display: block;
+}
+
+.img-over img{
+    position: absolute;
+    width: 3rem;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.img-over {
+   position: absolute;
+   left: 0;
+   top: 0;
+   height: 100%;
+   width: 100%;
+   background-color: hsla(178, 100%, 50%, 0.5);
+   display: none;
+}
+
+.img:hover .img-over {
+    display: block;
+    cursor: pointer;
 }
 
 .description {
@@ -38,16 +72,23 @@ picture img {
     border-bottom: 1px solid hsl(215, 32%, 27%);
 }
 
-.description h1 {
+.description h1 a{
     color: hsl(0, 0%, 100%);
+    text-decoration: none;
     font-weight: 600;
     font-size: 1.5rem;
-    margin-bottom: 1rem;
+   
+}
+
+.description h1 a:hover{
+    cursor: pointer;
+    color:  hsl(178, 100%, 50%);
 }
 
 .description p {
     color: hsl(215, 51%, 70%);
     font-weight: 300;
+    margin-top: 1rem;
 }
 
 .price-time {
@@ -97,8 +138,12 @@ picture img {
     font-weight: 300;
     font-size: 1rem;
 }
-.avatar p span {
+.avatar p a{
     color: hsl(0, 0%, 100%);
     font-weight: 400;
+    text-decoration: none;
 }
 
+.avatar p a:hover {
+    color: hsl(178, 100%, 50%);
+}
